@@ -5,11 +5,11 @@ import { WobbleCard } from "./ui/wobble-card";
 import Recipe from "../img/recipe.png";
 export function WhyChooseUs() {
   return (
-    <div className="p-10">
-      <div className="text-gray-300 text-center text-3xl mb-3 font-semibold">
+    <div className="p-8 sm:p-10">
+      <div className="text-gray-300 text-center text-xl sm:text-3xl mb-3 font-semibold">
         Why Choose Us
       </div>
-      <p className="text-center text-5xl font-extrabold text-indigo-500">
+      <p className="text-center text-2xl sm:text-5xl font-extrabold text-indigo-500">
         Discover global flavors with expert Recipes.
       </p>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full my-10">

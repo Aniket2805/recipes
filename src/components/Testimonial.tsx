@@ -36,10 +36,10 @@ const Testimonial = () => {
   ];
   return (
     <div className="p-10">
-      <div className="text-gray-300 text-center text-3xl mb-3 font-semibold">
+      <div className="text-gray-300 text-center text-lg sm:text-2xl md:text-3xl mb-3 font-semibold">
         What Our Clients Say
       </div>
-      <p className="text-center text-5xl font-extrabold text-indigo-500">
+      <p className="text-center text-xl sm:text-4xl md:text-5xl font-extrabold text-indigo-500">
         Real Feedback from Satisfied Customers
       </p>
       <div className="h-[26rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">

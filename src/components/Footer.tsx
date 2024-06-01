@@ -7,9 +7,9 @@ import { IoLogoYoutube } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-400 py-12 lg:px-8">
+    <footer className="bg-black text-gray-400 py-12 lg:px-8 sticky">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 sm:px-6 lg:px-8">
-        <div className="">
+        <div className="text-center">
           <h2 className="text-white text-lg font-semibold mb-4">About Us</h2>
           <p className="mb-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt

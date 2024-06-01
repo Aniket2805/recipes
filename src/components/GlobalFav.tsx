@@ -411,10 +411,10 @@ export default function GlobalFav() {
           }}
           className="div"
         >
-          <h2 className="text-center text-gray-300 text-3xl mb-3 font-semibold">
+          <h2 className="text-center text-gray-300 text-lg sm:text-2xl md:text-3xl mb-3 font-semibold">
             Recipes from worldwide
           </h2>
-          <p className="text-center text-5xl font-extrabold text-indigo-500">
+          <p className="text-center text-xl sm:text-4xl md:text-5xl font-extrabold text-indigo-500">
             A taste of the world in every bite.
           </p>
         </motion.div>

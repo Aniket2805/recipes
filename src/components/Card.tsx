@@ -3,6 +3,7 @@ import { BackgroundGradient } from "./ui/background-gradient";
 import Image from "next/image";
 import { MdStarRate } from "react-icons/md";
 import { FaTags } from "react-icons/fa6";
+import Link from "next/link";
 
 const Card = (props: {
   recipe: {
@@ -59,12 +60,14 @@ const Card = (props: {
           ))}
         </div>
         <div>
-          <button className="p-[3px] relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-            <div className="px-8 py-2  bg-zinc-800 rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-              View Recipe
-            </div>
-          </button>
+          <Link href={`/recipes/${recipe.name}`}>
+            <button className="p-[3px] relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+              <div className="px-8 py-2  bg-zinc-800 rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+                View Recipe
+              </div>
+            </button>
+          </Link>
         </div>
       </BackgroundGradient>
     </div>

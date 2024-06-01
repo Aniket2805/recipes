@@ -9,12 +9,12 @@ import Link from "next/link";
 import { Button } from "./ui/moving-border";
 export default function SparklesPreview() {
   return (
-    <div className="h-[100vh] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <h1 className="md:text-7xl text-5xl lg:text-9xl font-bold text-center text-white relative z-20 flex items-center">
-        Best<span className="text-indigo-500 ml-8">Recipes!</span>
+    <div className="sm:h-[100vh] mt-20 py-16 sm:my-0 w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-center text-white relative z-20 flex items-center">
+        Best<span className="text-indigo-500 ml-4 sm:ml-8">Recipes!</span>
         <GiCook className="text-yellow-300" />
       </h1>
-      <p className="md:text-lg text-sm lg:text-2xl text-center text-white relative z-20 mt-4">
+      <p className="text-xs sm:text-sm md:text-lg lg:text-2xl text-center text-white relative z-20 mt-4">
         Discover the best cooking recipes from around the world!
       </p>
       <div className="w-[60rem] bg-black h-40 relative">
@@ -44,14 +44,14 @@ export default function SparklesPreview() {
           src={Cooking}
           width={"300"}
           height={"300"}
-          className="z-999 absolute left-[100px] top-1/2"
+          className="z-999 hidden sm:flex sm:absolute left-0 lg:left-[100px] top-1/2"
         />
         <Image
           alt=""
           src={chef}
           width={"300"}
           height={"300"}
-          className="z-999 absolute right-[100px] top-1/2"
+          className="z-999 hidden sm:flex sm:absolute right-[0px] lg:right-[100px] top-1/2"
         />
         <div>
           <Link href={"/recipes"}>

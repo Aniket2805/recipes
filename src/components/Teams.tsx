@@ -49,10 +49,10 @@ const people = [
 export default function Teams() {
   return (
     <div className="p-10">
-      <div className="text-gray-300 text-center text-3xl mb-3 font-semibold">
+      <div className="text-gray-300 text-center text-lg sm:text-2xl md:text-3xl mb-3 font-semibold">
         Our Team
       </div>
-      <p className="text-center text-5xl font-extrabold text-indigo-500 mb-10">
+      <p className="text-center text-xl sm:text-4xl md:text-5xl font-extrabold text-indigo-500 mb-10">
         Dedicated Professionals Driving Innovation
       </p>
       <div className="flex flex-row items-center justify-center mb-10 w-full">
