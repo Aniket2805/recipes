@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import mission from "@/img/mission.jpg";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 const page = () => {
@@ -103,8 +102,8 @@ const page = () => {
                 <CardItem translateZ="100" className="w-full mt-4">
                   <Image
                     src={mission}
-                    height={400}
-                    width={400}
+                    height={"400"}
+                    width={"400"}
                     className="rounded-2xl group-hover/card:shadow-xl"
                     alt="thumbnail"
                   />
@@ -114,8 +113,8 @@ const page = () => {
           </div>
         </div>
         <h1 className="sm:text-2xl md:text-3xl lg:text-4xl text-white text-center font-bold mt-4">
-          Join us on this culinary adventure and let's make cooking a delightful
-          and fulfilling part of your life!
+          Join us on this culinary adventure and let&apos;s make cooking a
+          delightful and fulfilling part of your life!
         </h1>
       </div>
     </div>
