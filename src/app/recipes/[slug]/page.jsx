@@ -9,7 +9,7 @@ import { LuAlarmClock } from "react-icons/lu";
 import { FaClipboardList } from "react-icons/fa";
 import Image from "next/image";
 import { FaTags } from "react-icons/fa";
-const page = () => {
+const Page = () => {
   const { slug } = useParams();
   const decodedSlug = decodeURIComponent(slug);
   const recipe = recipeData.recipes.find(
@@ -105,4 +105,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
