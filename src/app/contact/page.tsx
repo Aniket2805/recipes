@@ -41,7 +41,7 @@ const page = () => {
     );
   };
   return (
-    <div className="text-white pt-24 mt-12 px-6 sm:px-10 lg:px-24">
+    <div className="text-white pt-20 sm:pt-24 mt-12 px-6 sm:px-10 lg:px-24">
       <h1 className="text-xl sm:text-3xl font-bold mb-2 text-center">
         Contact Us
       </h1>

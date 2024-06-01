@@ -18,7 +18,7 @@ const FeaturedSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
           {recipeData.recipes.slice(0, 6).map((recipe, index) => (
             <Card key={index} recipe={recipe} />
-          ))}
+          ))} 
         </div>
       </div>
       <div className="flex justify-center">

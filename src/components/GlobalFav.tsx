@@ -395,8 +395,8 @@ export default function GlobalFav() {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-center py-10 h-screen md:h-auto bg-black relative w-full">
-      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
+    <div className="flex flex-row items-center justify-center h-auto bg-black relative w-full">
+      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-[26rem] sm:h-[40rem] sm:px-4">
         <motion.div
           initial={{
             opacity: 0,
@@ -419,7 +419,7 @@ export default function GlobalFav() {
           </p>
         </motion.div>
         <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent to-black z-40" />
-        <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
+        <div className="absolute w-full -bottom-20 h-full z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />;
         </div>
       </div>

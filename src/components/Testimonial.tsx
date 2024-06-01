@@ -35,7 +35,7 @@ const Testimonial = () => {
     },
   ];
   return (
-    <div className="p-10">
+    <div className="px-6 pb-6 sm:px-10 sm:pb-10">
       <div className="text-gray-300 text-center text-lg sm:text-2xl md:text-3xl mb-3 font-semibold">
         What Our Clients Say
       </div>

@@ -49,11 +49,11 @@ const Card = (props: {
           <FaTags className="text-white text-lg mr-2" />
           <span className="text-white text-base font-semibold">Tags</span>
         </div>
-        <div className="mb-2">
+        <div className="mb-2 flex flex-wrap">
           {recipe.tags.map((tag, index) => (
             <span
               key={index}
-              className="text-white text-sm bg-zinc-800 px-2 py-1 rounded-md mr-2"
+              className="text-white text-sm bg-zinc-800 px-2 py-1 rounded-md mr-2 mb-2"
             >
               {tag}
             </span>
