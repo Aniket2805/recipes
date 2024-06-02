@@ -6,6 +6,7 @@ import { IoMail } from "react-icons/io5";
 import { FaClock } from "react-icons/fa6";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
 import { cn } from "@/utils/cn";
 const page = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -106,6 +107,15 @@ const page = () => {
               <button
                 className="bg-gradient-to-br relative group/btn from-black to-neutral-600 block w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset]"
                 type="submit"
+                onClick={() =>
+                  toast("Form Submitted", {
+                    description: "Sunday, December 03, 2023 at 9:00 AM",
+                    action: {
+                      label: "Remove",
+                      onClick: () => console.log("Undo"),
+                    },
+                  })
+                }
               >
                 Send &rarr;
                 <BottomGradient />
