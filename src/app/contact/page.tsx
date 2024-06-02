@@ -6,11 +6,11 @@ import { IoMail } from "react-icons/io5";
 import { FaClock } from "react-icons/fa6";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
 import { cn } from "@/utils/cn";
 const page = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
   };
   const BottomGradient = () => {
     return (
@@ -80,11 +80,21 @@ const page = () => {
               <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
                 <LabelInputContainer>
                   <Label htmlFor="firstname">First name</Label>
-                  <Input id="firstname" placeholder="Tyler" type="text" />
+                  <Input
+                    id="firstname"
+                    placeholder="Tyler"
+                    type="text"
+                    required
+                  />
                 </LabelInputContainer>
                 <LabelInputContainer>
                   <Label htmlFor="lastname">Last name</Label>
-                  <Input id="lastname" placeholder="Durden" type="text" />
+                  <Input
+                    id="lastname"
+                    placeholder="Durden"
+                    type="text"
+                    required
+                  />
                 </LabelInputContainer>
               </div>
               <LabelInputContainer className="mb-4">
@@ -93,6 +103,7 @@ const page = () => {
                   id="email"
                   placeholder="projectmayhem@fc.com"
                   type="email"
+                  required
                 />
               </LabelInputContainer>
               <LabelInputContainer className="mb-8">
@@ -101,11 +112,21 @@ const page = () => {
                   id="twitterpassword"
                   placeholder="Your Message"
                   type="twitterpassword"
+                  required
                 />
               </LabelInputContainer>
               <button
                 className="bg-gradient-to-br relative group/btn from-black to-neutral-600 block w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset]"
                 type="submit"
+                onClick={() =>
+                  toast("From Submitted", {
+                    description: "Sunday, December 03, 2023 at 9:00 AM",
+                    action: {
+                      label: "Remove",
+                      onClick: () => console.log("Undo"),
+                    },
+                  })
+                }
               >
                 Send &rarr;
                 <BottomGradient />
