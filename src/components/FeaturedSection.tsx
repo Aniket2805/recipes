@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import Link from "next/link";
 import { Button } from "./ui/moving-border";
 import { Recipe } from "@/data/type";

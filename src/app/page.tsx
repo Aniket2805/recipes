@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import FeaturedSection from "@/components/FeaturedSection";
 import GlobalFav from "@/components/GlobalFav";
 import SparklesPreview from "@/components/SparklesPreview";

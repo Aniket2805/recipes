@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { add } from "@/lib/store/features/favourite/favoutriteSlice";
 import { AppStore, makeStore } from "@/lib/store/store";
 import React, { ReactNode, useRef } from "react";

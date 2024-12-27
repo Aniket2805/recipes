@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useParams } from "next/navigation";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { TbBulbFilled } from "react-icons/tb";

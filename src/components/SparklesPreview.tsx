@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from "react";
 import { SparklesCore } from "./ui/sparkles";
 import { GiCook } from "react-icons/gi";

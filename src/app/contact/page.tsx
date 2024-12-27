@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from "react";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { FiPhoneCall } from "react-icons/fi";
