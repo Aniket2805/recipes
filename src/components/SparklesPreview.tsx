@@ -43,14 +43,12 @@ export default function SparklesPreview() {
           loading="eager"
           src={Cooking}
           width={300}
-          height={300}
           className="z-999 hidden sm:flex sm:absolute left-0 lg:left-[100px] top-1/2"
         />
         <Image
           alt=""
           src={chef}
           width={300}
-          height={300}
           className="z-999 hidden sm:flex sm:absolute right-[0px] lg:right-[100px] top-1/2"
         />
         <div>
