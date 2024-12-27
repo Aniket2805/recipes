@@ -12,7 +12,7 @@ const Page = () => {
       .then((data) => {
         setrecipes(data.meals);
       });
-  }, []);
+  }, [slug]);
   return (
     <div className="my-10 pt-16 sm:pt-20 px-8 sm:px-16 lg:px-24">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-4">
