@@ -5,7 +5,7 @@ import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { PlaceholdersAndVanishInput } from "./ui/placeholders-and-vanish-input";
 import { useRouter } from "next/navigation";
-import { categoriesData } from "@/data/categories_data.json";
+import { categoriesData } from "@/data/categories_data";
 export function NavbarDemo() {
   return (
     <div className="relative w-full flex items-center justify-center">
@@ -30,8 +30,8 @@ function Navbar({ className }: { className?: string }) {
     fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
       .then((res) => res.json())
       .then((data) => setCategories(data.categories));
-  }, [])
-  
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
