@@ -99,7 +99,7 @@ const page = () => {
           <div>
             <CardContainer className="inter-var sm:p-10">
               <CardBody className="relative group/card  hover:shadow-2xl shadow-xl shadow-white/[0.3] hover:shadow-white/[0.8] border-white/[0.2] w-auto h-auto rounded-2xl p-6 border-2 bg-zinc-950">
-                <CardItem translateZ="100" className="w-full mt-4">
+                <CardItem translateZ="100" className="w-full">
                   <Image
                     src={mission}
                     height={"400"}

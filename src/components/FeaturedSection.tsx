@@ -1,9 +1,22 @@
 "use client";
 import Link from "next/link";
-import recipeData from "../data/recipe_data.json";
 import { Button } from "./ui/moving-border";
+import { Recipe } from "@/data/type";
 import Card from "@/components/Card";
+import { use, useEffect, useState } from "react";
 const FeaturedSection = () => {
+  const [recipes, setrecipes] = useState<Recipe[]>([]);
+  useEffect(() => {
+    for (let i = 0; i < 6; i++) {
+      fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+        .then((res) => res.json())
+        .then((data) => {
+          setrecipes((prev) => {
+            return [...prev, data.meals[0]];
+          });
+        });
+    }
+  }, []);
   return (
     <div className="pb-12 bg-black">
       <div>
@@ -15,10 +28,10 @@ const FeaturedSection = () => {
         </p>
       </div>
       <div className="my-10 px-8 sm:px-16 lg:px-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
-          {recipeData.recipes.slice(0, 6).map((recipe, index) => (
-            <Card key={index} recipe={recipe} />
-          ))} 
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-4">
+          {recipes.map((recipe) => (
+            <Card key={recipe.idMeal} recipe={recipe} />
+          ))}
         </div>
       </div>
       <div className="flex justify-center">

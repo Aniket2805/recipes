@@ -1,9 +1,11 @@
 "use client";
-import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
+import React, { useEffect, useState } from "react";
+import { Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
-
+import { PlaceholdersAndVanishInput } from "./ui/placeholders-and-vanish-input";
+import { useRouter } from "next/navigation";
+import { categoriesData } from "@/data/categories_data.json";
 export function NavbarDemo() {
   return (
     <div className="relative w-full flex items-center justify-center">
@@ -14,6 +16,29 @@ export function NavbarDemo() {
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+  const placeholders = [
+    "Chicken Recipes",
+    "Pizza Recipes",
+    "Pasta Recipes",
+    "Biryani Recipes",
+    "Cake Recipes",
+  ];
+  const [search, setSearch] = useState("");
+  const router = useRouter();
+  const [categories, setCategories] = useState<any[]>();
+  useEffect(() => {
+    fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
+      .then((res) => res.json())
+      .then((data) => setCategories(data.categories));
+  }, [])
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    router.push(`/search/${search}`);
+  };
   return (
     <div
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
@@ -26,14 +51,35 @@ function Navbar({ className }: { className?: string }) {
             item="Home"
           ></MenuItem>
         </Link>
-        <MenuItem setActive={setActive} active={active} item="Recipies">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/recipes">All Recipes</HoveredLink>
-            <HoveredLink href="/pizza">Pizza Recipe</HoveredLink>
-            <HoveredLink href="/chicken">Chicken Recipes</HoveredLink>
-            <HoveredLink href="/pasta">Pasta Recipes</HoveredLink>
-          </div>
+        <MenuItem setActive={setActive} active={active} item="Search">
+          <PlaceholdersAndVanishInput
+            onSubmit={onSubmit}
+            onChange={handleChange}
+            placeholders={placeholders}
+          />
         </MenuItem>
+        <Link href={"/category"} className="lg:hidden">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Categories"
+          ></MenuItem>
+        </Link>
+        <div className="lg:grid hidden">
+          <MenuItem setActive={setActive} active={active} item="Categories">
+            <div className="text-sm grid sm:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
+              {categoriesData.map((category) => (
+                <ProductItem
+                  key={category.idCategory}
+                  title={category.title}
+                  description={category.description}
+                  href={"/category" + category.href}
+                  src={category.src}
+                />
+              ))}
+            </div>
+          </MenuItem>
+        </div>
         <Link href={"/about"}>
           <MenuItem
             setActive={setActive}

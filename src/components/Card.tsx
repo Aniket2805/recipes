@@ -1,73 +1,60 @@
 "use client";
 import { BackgroundGradient } from "./ui/background-gradient";
 import Image from "next/image";
-import { MdStarRate } from "react-icons/md";
-import { FaTags } from "react-icons/fa6";
+import { MdOutlineFavorite, MdStarRate } from "react-icons/md";
 import Link from "next/link";
+import { useAppDispatch } from "@/lib/store/hooks/hooks";
+import { add } from "@/lib/store/features/favourite/favoutriteSlice";
+import { Recipe } from "@/data/type";
 
-const Card = (props: {
-  recipe: {
-    id: number;
-    name: string;
-    ingredients: string[];
-    instructions: string[];
-    prepTimeMinutes: number;
-    cookTimeMinutes: number;
-    servings: number;
-    difficulty: string;
-    cuisine: string;
-    caloriesPerServing: number;
-    mealType: string[];
-    tags: string[];
-    userId: number;
-    image: string;
-    rating: number;
-    reviewCount: number;
-  };
-}) => {
+const Card = (props: { recipe: Recipe }) => {
   const { recipe } = props;
+  const dispatch = useAppDispatch();
+  const handleFavourite = (id: string) => {
+    dispatch(add(id));
+    console.log("Favourite", id);
+  };
   return (
     <div className="cursor-pointer">
-      <BackgroundGradient className="rounded-[22px] p-4 sm:p-6 bg-zinc-900">
+      <BackgroundGradient className="rounded-[22px] p-2 sm:p-4 bg-zinc-900">
         <Image
-          src={recipe.image}
+          src={recipe.strMealThumb}
           alt=""
           width={300}
           height={200}
           className="object-contain rounded-[22px] w-full"
         />
         <div className="flex justify-between items-center mt-4">
-          <h2 className="text-white text-xl font-semibold">{recipe.name}</h2>
+          <h2 className="text-white text-lg font-semibold truncate">
+            {recipe.strMeal}
+          </h2>
           <div className="flex items-center justify-center">
-            <span className="text-white text-lg font-semibold mr-1">
-              {recipe.rating}
+            <span className="text-white text-lg font-semibold mx-1">
+              {(Math.random() * (5 - 4.2) + 4.2).toFixed(1)}
             </span>
             <MdStarRate className="text-yellow-400 text-2xl" />
           </div>
         </div>
-        <div className="flex mt-2 items-center mb-2">
-          <FaTags className="text-white text-lg mr-2" />
-          <span className="text-white text-base font-semibold">Tags</span>
-        </div>
-        <div className="mb-2 flex flex-wrap">
-          {recipe.tags.map((tag, index) => (
-            <span
-              key={index}
-              className="text-white text-sm bg-zinc-800 px-2 py-1 rounded-md mr-2 mb-2"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <div>
-          <Link href={`/recipes/${recipe.name}`}>
+        <div className="flex justify-between mt-4">
+          <Link href={`/recipes/${recipe.idMeal}`}>
             <button className="p-[3px] relative">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-              <div className="px-8 py-2  bg-zinc-800 rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+              <div className="px-6 py-2  bg-zinc-800 rounded-[6px] text-sm  relative group transition duration-200 text-white hover:bg-transparent">
                 View Recipe
               </div>
             </button>
           </Link>
+          <button
+            className="p-[3px] relative"
+            onClick={() => {
+              handleFavourite(recipe.idMeal);
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
+            <div className="px-2 py-2 rounded-full bg-zinc-800  relative group transition duration-200 text-white hover:bg-white hover:text-red-700">
+              <MdOutlineFavorite className="text-xl" />
+            </div>
+          </button>
         </div>
       </BackgroundGradient>
     </div>
