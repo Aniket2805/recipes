@@ -1,21 +1,27 @@
-'use client';
+"use client";
 import Link from "next/link";
 import { Button } from "./ui/moving-border";
 import { Recipe } from "@/data/type";
 import Card from "@/components/Card";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 const FeaturedSection = () => {
   const [recipes, setrecipes] = useState<Recipe[]>([]);
-  useEffect(() => {
-    for (let i = 0; i < 8; i++) {
-      fetch("https://www.themealdb.com/api/json/v1/1/random.php")
-        .then((res) => res.json())
-        .then((data) => {
-          setrecipes((prev) => {
-            return [...prev, data.meals[0]];
-          });
-        });
+  const getRecipes = async () => {
+    const fetchedRecipes: Recipe[] = [];
+    while (fetchedRecipes.length < 8) {
+      const res = await fetch(
+        "https://www.themealdb.com/api/json/v1/1/random.php"
+      );
+      const data = await res.json();
+      const meal = data.meals[0];
+      if (!fetchedRecipes.some((r) => r.idMeal === meal.idMeal)) {
+        fetchedRecipes.push(meal);
+      }
     }
+    setrecipes(fetchedRecipes);
+  };
+  useEffect(() => {
+    getRecipes();
   }, []);
   return (
     <div className="pb-12 bg-black">

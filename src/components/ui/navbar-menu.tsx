@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -99,9 +99,7 @@ export const ProductItem = ({
       />
       <div>
         <h4 className="text-xl font-bold mb-1 text-white">{title}</h4>
-        <p className="text-sm max-w-[10rem] text-neutral-300">
-          {description}
-        </p>
+        <p className="text-sm max-w-[10rem] text-neutral-300">{description}</p>
       </div>
     </Link>
   );

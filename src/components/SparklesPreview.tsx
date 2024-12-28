@@ -33,8 +33,6 @@ export default function SparklesPreview() {
           className="w-full h-full"
           particleColor="#FFFFFF"
         />
-
-        {/* Radial Gradient to prevent sharp edges */}
         <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
       </div>
       <div>
@@ -52,7 +50,7 @@ export default function SparklesPreview() {
           className="z-999 hidden sm:flex sm:absolute right-[0px] lg:right-[100px] top-1/2"
         />
         <div>
-          <Link href={"/recipes"}>
+          <Link href={"/category"}>
             <Button
               borderRadius="1.75rem"
               className="bg-black border-cyan-500 border-2"

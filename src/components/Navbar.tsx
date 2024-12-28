@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useEffect, useState } from "react";
 import { Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/utils/cn";
@@ -25,12 +25,6 @@ function Navbar({ className }: { className?: string }) {
   ];
   const [search, setSearch] = useState("");
   const router = useRouter();
-  const [categories, setCategories] = useState<any[]>();
-  useEffect(() => {
-    fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
-      .then((res) => res.json())
-      .then((data) => setCategories(data.categories));
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);

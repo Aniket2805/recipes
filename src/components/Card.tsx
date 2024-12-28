@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { BackgroundGradient } from "./ui/background-gradient";
 import Image from "next/image";
 import { MdOutlineFavorite, MdStarRate } from "react-icons/md";
