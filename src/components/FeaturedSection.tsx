@@ -7,7 +7,7 @@ import { use, useEffect, useState } from "react";
 const FeaturedSection = () => {
   const [recipes, setrecipes] = useState<Recipe[]>([]);
   useEffect(() => {
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 8; i++) {
       fetch("https://www.themealdb.com/api/json/v1/1/random.php")
         .then((res) => res.json())
         .then((data) => {
